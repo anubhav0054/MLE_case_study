@@ -1,50 +1,48 @@
-# Hospital Readmission Prediction
+# Credit Card Fraud Detection
 
 ## Objective
 
-Predict whether a patient will be readmitted to the hospital within 30 days.
+Detect fraudulent credit card transactions using machine learning.
 
 ## Model
 
-Logistic Regression with L2 Regularization.
+XGBoost Classifier.
 
 ## Dataset
 
-Diabetes 130-US Hospitals Dataset.
+IEEE-CIS Fraud Detection Dataset.
 
-## Features
+## Problem
 
-The model uses patient demographics, diagnosis information,
-vital/clinical information and previous healthcare utilization.
-
-## Target
-
-1 = Readmitted within 30 days
-
-0 = Not readmitted within 30 days
+Credit card fraud detection is a highly imbalanced classification
+problem where fraudulent transactions represent a small proportion
+of total transactions.
 
 ## Preprocessing
 
-- Missing value imputation
-- Numerical feature standardization
-- Categorical feature one-hot encoding
+- Missing value handling
+- Feature selection
+- Stratified train-test split
+- Class imbalance handling using scale_pos_weight
 
 ## Evaluation
 
 The model is evaluated using:
 
 - ROC-AUC
+- PR-AUC
 - Precision
 - Recall
 - F1-score
 - Confusion Matrix
 
-## Clinical Considerations
+## Business Considerations
 
-False negatives can be clinically important because a high-risk
-patient may not receive additional monitoring or follow-up.
+False positives may cause legitimate transactions to be declined
+or flagged unnecessarily.
 
-False positives can result in unnecessary monitoring and resource use.
+False negatives allow fraudulent transactions to pass through,
+potentially causing financial losses.
 
-Therefore, model threshold selection should consider the relative
-clinical costs of false negatives and false positives.
+Therefore, threshold selection and recall/precision trade-offs are
+important in fraud detection.
