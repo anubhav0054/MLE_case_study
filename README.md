@@ -1,21 +1,48 @@
-# Machine Learning Case Studies
+# Credit Card Fraud Detection
 
-This repository contains two machine learning case studies.
+## Objective
 
-## Case Study 1
-Hospital Readmission Prediction using Logistic Regression
-with L2 regularization.
+Detect fraudulent credit card transactions using machine learning.
 
-## Case Study 2
-Credit Card Fraud Detection using XGBoost on a highly
-imbalanced transaction dataset.
+## Model
 
-## Technologies
+XGBoost Classifier.
 
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- XGBoost
-- Matplotlib
-- Google Colab
+## Dataset
+
+IEEE-CIS Fraud Detection Dataset.
+
+## Problem
+
+Credit card fraud detection is a highly imbalanced classification
+problem where fraudulent transactions represent a small proportion
+of total transactions.
+
+## Preprocessing
+
+- Missing value handling
+- Feature selection
+- Stratified train-test split
+- Class imbalance handling using scale_pos_weight
+
+## Evaluation
+
+The model is evaluated using:
+
+- ROC-AUC
+- PR-AUC
+- Precision
+- Recall
+- F1-score
+- Confusion Matrix
+
+## Business Considerations
+
+False positives may cause legitimate transactions to be declined
+or flagged unnecessarily.
+
+False negatives allow fraudulent transactions to pass through,
+potentially causing financial losses.
+
+Therefore, threshold selection and recall/precision trade-offs are
+important in fraud detection.
